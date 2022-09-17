@@ -3,8 +3,6 @@ import { useState } from 'react';
 
 function GalleryItem ({galleryItem, fetchGallery}) {
 
-    console.log(galleryItem.path)
-
     const [isPictureClicked, setisPictureClicked] = useState(true);
     
     const galleryDescription = () => {
