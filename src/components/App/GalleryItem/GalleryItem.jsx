@@ -1,7 +1,12 @@
 import axios from 'axios'
+import { useState } from 'react';
 
 function GalleryItem ({galleryItem, fetchGallery}) {
 
+    console.log(galleryItem.path)
+
+    const [isPictureClicked, setisPictureClicked] = useState(true);
+    
     const galleryDescription = () => {
         axios({
             method: 'PUT',
@@ -17,10 +22,13 @@ function GalleryItem ({galleryItem, fetchGallery}) {
     }
 
     return (
-        <div>
-            <img src="images/goat_small.jpg"/>
-            <p>Desciption: {galleryItem.description}</p>
-            <button onClick={galleryDescription}>❤️</button> = {galleryItem.likes}
+        <div className='galleryItems'>
+            <img src={galleryItem.path} onClick={() => setisPictureClicked(!isPictureClicked)}/>
+            {!isPictureClicked && galleryItem.description}
+            <br></br>
+            <br></br>
+            <button onClick={galleryDescription}>❤️</button>
+            <p>{galleryItem.likes} people love this!</p>
         </div>
     )
 }
