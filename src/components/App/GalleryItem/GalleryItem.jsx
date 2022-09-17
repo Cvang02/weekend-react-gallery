@@ -13,7 +13,7 @@ function GalleryItem ({galleryItem, fetchGallery}) {
         .then((putRes) => {
             console.log('PUT Route Successful', putRes);
             fetchGallery();
-        })
+    })
         .catch((putErr) => {
             console.log('PUT Route Unsuccessful', putErr);
         })
