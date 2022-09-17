@@ -1,6 +1,7 @@
 import React, { useState, useEffect, } from 'react';
 import './App.css';
 import axios from 'axios';
+import GalleryList from './GalleryList/GalleryList';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
   const fetchGallery = () => {
     axios({
       method: 'GET',
-      url: '/gallery'       // '/gallery', gallery' TRY THIS IF URL DON'T WORK.
+      url: '/gallery'
     })
     .then((getRes) => {
       console.log('GET Route Successful:', getRes.data);
@@ -32,18 +33,7 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
-        {/* <img src="images/goat_small.jpg"/> */}
-        <ul>
-          {gallery.map(item => {
-            return (
-              <div key={item.id}>
-              <img src="images/goat_small.jpg"/>
-              <li>Desciption: {item.decription}</li>
-              <li>Likes: {item.likes}</li>
-              </div>
-            )
-          })}
-        </ul>
+        <GalleryList galleryLists={gallery}/>
       </div>
     );
 }
