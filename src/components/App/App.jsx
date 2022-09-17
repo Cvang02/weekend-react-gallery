@@ -2,6 +2,7 @@ import React, { useState, useEffect, } from 'react';
 import './App.css';
 import axios from 'axios';
 import GalleryList from './GalleryList/GalleryList';
+import Header from '../Header/Header';
 
 function App() {
 
@@ -29,9 +30,7 @@ function App() {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
+        <Header />
         <GalleryList galleryLists={gallery} fetchGallery={fetchGallery}/>
       </div>
     );
