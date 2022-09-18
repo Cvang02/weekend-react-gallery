@@ -3,7 +3,7 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 function GalleryList ({galleryLists, fetchGallery}) {
   
     return (
-        <ul>
+        <ul className="galleryList">
         {galleryLists.map(item => {
           return (
             <GalleryItem key={item.id} galleryItem={item} fetchGallery={fetchGallery} />

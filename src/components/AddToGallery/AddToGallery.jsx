@@ -59,7 +59,7 @@ function AddToGallery ({fetchGallery}) {
             <input onChange= {handleChange}
                 type="text"
                 value={newGalleryItem.description}
-                placeholder="description"
+                placeholder="Description"
                 name="description"
             />
             <input type="submit" value="Submit" />
