@@ -24,4 +24,18 @@
     - When the like button is clicked, use Axios to update (PUT) the like count /gallery/like/:id.
     - Update the gallery each time a like button is clicked.
 
-// remember to remove nodemon if pushing it to heroku. 
+##### Stretch Goals - Not required to complete. 
+
+Features
+
+- ✅ Move the data into a database (postgresql)
+    - name your database react_gallery
+    - include a database.sql file documenting your database tables
+- ✅ Add a form (new component) that allows a user to POST a new gallery item
+    - Client side form (use absolute URL for images)
+    - Server side route for posting an image
+- ✅ Ability to delete a gallery item
+- Add styling with Material-UI https://material-ui.com/
+- Use multer for image upload
+
+NOTE: The above stretch goals are intended to be completed in order.
