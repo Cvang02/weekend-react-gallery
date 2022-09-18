@@ -3,17 +3,21 @@ import axios from 'axios';
 
 function AddToGallery ({fetchGallery}) {
 
+    //THIS IS THE REACT STATE THAT IS IMPORTANT.
     const [newGalleryItem, setNewGalleryItem] = useState ({path: '', description: '',})
 
+    // THIS PREVENTS PAGE LOAD FROM KEEP REFESHING WHEN PRESSING ENTER KEY. 
     const handleSubmit = (e) => {
         e.preventDefault();
         addItem(newGalleryItem);
     }
 
+    // THIS FUNCTION EMPTY THE INPUT.
     function emptyInputs() {
         setNewGalleryItem({path:'', description:''})
     }
 
+    // POST ROUTE
     const addItem = (item) => {
         console.log(`New Item: ${item}`);
         axios({
@@ -32,8 +36,9 @@ function AddToGallery ({fetchGallery}) {
         .catch((postErr) => {
             console.log('POST Route Unsuccessful:', postErr);
         })
-    }
+    } // END OF POST ROUTE.
 
+    // THIS FUNCTION HANDLES THE INPUT UPDATE/CHANGES. 
     const handleChange = e => {
         const { name, value } = e.target;
         setNewGalleryItem(newGalleryItem => ({
