@@ -20,6 +20,13 @@ function AddToGallery ({fetchGallery}) {
     // POST ROUTE
     const addItem = (item) => {
         console.log(`New Item: ${item}`);
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Posted',
+            text: `your adventure awaits!!!`,
+        })
+
         axios({
             method: 'POST',
             url: '/gallery',
