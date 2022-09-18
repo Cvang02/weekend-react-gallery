@@ -3,8 +3,10 @@ import { useState } from 'react';
 
 function GalleryItem ({galleryItem, fetchGallery}) {
 
+    //THIS IS THE REACT STATE THAT IS IMPORTANT.
     const [isPictureClicked, setisPictureClicked] = useState(true);
     
+    // PUT ROUTE 
     const galleryDescription = () => {
         axios({
             method: 'PUT',
@@ -17,7 +19,22 @@ function GalleryItem ({galleryItem, fetchGallery}) {
         .catch((putErr) => {
             console.log('PUT Route Unsuccessful', putErr);
         })
-    }
+    } // END OF PUT ROUTE.
+
+    // DELETE ROUTE
+    const removeItem = () => {
+        axios({
+            method: 'DELETE',
+            url: `/gallery/${galleryItem.id}`
+        })
+        .then((delRes) => {
+            console.log('DELETE Route Successful', delRes);
+            fetchGallery();
+        })
+        .catch ((delErr) => {
+            console.log('DELETE Route Unsuccessful', delErr);
+        });    
+    }// END OF DELETE ROUTE.
 
     return (
         
@@ -26,8 +43,11 @@ function GalleryItem ({galleryItem, fetchGallery}) {
             {!isPictureClicked && galleryItem.description}
             <br></br>
             <br></br>
-            <button onClick={galleryDescription}>❤️</button>
             <p>{galleryItem.likes} people love this!</p>
+            <button onClick={galleryDescription}>❤️</button>
+            <button onClick={removeItem}>🗑</button>
+            <br></br>
+            <br></br>
         </div>
     )
 }

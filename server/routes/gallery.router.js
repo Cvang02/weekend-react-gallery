@@ -90,11 +90,33 @@ router.post('/', (req, res) => {
         .then((postRes) => {
             console.log('POST Route Successful', postRes);
             res.sendStatus(201)
-        }).catch((postRes) => {
-            console.log('POST Route Unsuccessful', postRes);
+        }).catch((postErr) => {
+            console.log('POST Route Unsuccessful', postErr);
             res.sendStatus(500)
         })
 })
 
+// DELETE ROUTE - USING DATABASE SQL. 
+router.delete('/:id', (req, res) => {
+
+    console.log(`Deleting Item with ID ${req.params.id}`);
+    
+    const sqlText = `
+        DELETE from gallery
+        WHERE "id"=$1;
+        `
+    let sqlVal = [req.params.id];
+    
+    pool.query(sqlText, sqlVal)
+
+    .then((delRes) => {
+        console.log('DELETE Route Successful', delRes);
+        res.sendStatus(200);
+    })
+    .catch((delErr) => {
+        console.log('DELETE Route Unsuccessful', delErr);
+        res.sendStatus(500);
+    });
+})
 
 module.exports = router;
