@@ -3,10 +3,13 @@
 }
 
 .App-header {
-  background-color: #222;
-  padding: 1em;
-  color: white;
-  margin-bottom: 1em;
+  padding: 5em;
+  color: black;
+  margin-bottom: 2em;
+  font-size: 30px;
+  background-image: url(../../../public/images/fxXa.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .App-title {
@@ -14,20 +17,32 @@
 }
 
 img {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
 }
 
-/* body {
-  margin: 30px;
-  padding: 30px;
-} */
+body {
+  font-family: Bonheur Royale, handwriting;
+  font-weight: 100;
+  color: black;
+  text-transform: capitalize;
+  font-style: normal;
+  text-decoration: none;
+  line-height: 2em;
+  letter-spacing: 0px;
+  background-image: url(../../../public/images/Y3ie.gif), radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #a39ae0, #ab9ade, #b29adc, #cd8fc9, #e086b0, #e88293, #e58476);
+}
+
 
 .galleryItems {
   margin: 50px;
   padding: 30px;
   outline: 2px solid black;
   border-radius: 10%;
+  background-color: #ba83ca;
+  background-image: url(../../../public/images/14Uv.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .galleryList {
@@ -41,4 +56,29 @@ img {
 
 .likeButton {
   float: left;
+}
+
+input {
+  margin: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form {
+  font-size: xx-large;
+  margin: 50px;
+  padding: 25px;
+  outline: 2px solid black;
+  border-radius: 10%;
+  background-image: url(../../../public/images/5UKD.gif);
+  background-color: #ba83ca;
+}
+
+button {
+  border-radius: 2em;
 }

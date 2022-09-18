@@ -23,13 +23,36 @@ function GalleryItem ({galleryItem, fetchGallery}) {
 
     // DELETE ROUTE
     const removeItem = () => {
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          })
+        .then((delRes) => {
+            if (delRes.isConfirmed) {
         axios({
             method: 'DELETE',
             url: `/gallery/${galleryItem.id}`
         })
-        .then((delRes) => {
-            console.log('DELETE Route Successful', delRes);
-            fetchGallery();
+        
+        Swal.fire(
+            'Deleted!',
+            'Your Gallery Post has been deleted.',
+            'success'
+        )
+        console.log('DELETE Route Successful', delRes);
+        } else {
+            Swal.fire(
+                'Your Post Gallery is Safe.',
+            )}
+
+        fetchGallery();
+
         })
         .catch ((delErr) => {
             console.log('DELETE Route Unsuccessful', delErr);
@@ -40,6 +63,20 @@ function GalleryItem ({galleryItem, fetchGallery}) {
         setisPictureClicked(!isPictureClicked)
     }
 
+    const dinoClick = () => {
+        Swal.fire({
+            title: 'You Clicked on the FUN Button!!!',
+            width: 600,
+            padding: '3em',
+            color: '#716add',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url(/images/DuPN.gif)
+              repeat
+            `
+        })
+    }
+
     return (
         
         <div className='galleryItems'>
@@ -48,7 +85,7 @@ function GalleryItem ({galleryItem, fetchGallery}) {
             <br></br>
             <p>{galleryItem.likes} people love this!</p>
             <button className='likeButton' onClick={galleryDescription}>❤️</button>
-            {/* <button>🦖</button> */}
+            <button onClick={dinoClick}>🦖</button>
             <button className='removeButton' onClick={removeItem}>🗑</button>
         </div>
     );
