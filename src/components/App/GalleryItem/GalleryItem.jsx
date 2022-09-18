@@ -36,20 +36,22 @@ function GalleryItem ({galleryItem, fetchGallery}) {
         });    
     }// END OF DELETE ROUTE.
 
+    const switchDisplay = () => {
+        setisPictureClicked(!isPictureClicked)
+    }
+
     return (
         
         <div className='galleryItems'>
-            <img src={galleryItem.path} onClick={() => setisPictureClicked(!isPictureClicked)}/>
-            {!isPictureClicked && galleryItem.description}
-            <br></br>
+            <img className='Images' src={galleryItem.path} onClick={switchDisplay} hidden={!isPictureClicked}/>
+            <div onClick={switchDisplay}> {!isPictureClicked ? galleryItem.description : null} </div>
             <br></br>
             <p>{galleryItem.likes} people love this!</p>
-            <button onClick={galleryDescription}>❤️</button>
-            <button onClick={removeItem}>🗑</button>
-            <br></br>
-            <br></br>
+            <button className='likeButton' onClick={galleryDescription}>❤️</button>
+            {/* <button>🦖</button> */}
+            <button className='removeButton' onClick={removeItem}>🗑</button>
         </div>
-    )
+    );
 }
 
 export default GalleryItem;
