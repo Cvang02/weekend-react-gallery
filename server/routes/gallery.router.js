@@ -72,5 +72,29 @@ router.put('/like/:id', (req, res) => {
     })
 })
 
+// POST ROUTE - USING DATABASE SQL.
+router.post('/', (req, res) => {
+
+    console.log('POST New Data:', req.body)
+
+    const sqlText = `
+        INSERT INTO gallery 
+            (path, description)
+	    VALUES 
+            ($1, $2)
+    `
+    const sqlVal = [req.body.path, req.body.description]
+
+    pool.query(sqlText, sqlVal)
+
+        .then((postRes) => {
+            console.log('POST Route Successful', postRes);
+            res.sendStatus(201)
+        }).catch((postRes) => {
+            console.log('POST Route Unsuccessful', postRes);
+            res.sendStatus(500)
+        })
+})
+
 
 module.exports = router;

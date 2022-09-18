@@ -20,6 +20,7 @@ function GalleryItem ({galleryItem, fetchGallery}) {
     }
 
     return (
+        
         <div className='galleryItems'>
             <img src={galleryItem.path} onClick={() => setisPictureClicked(!isPictureClicked)}/>
             {!isPictureClicked && galleryItem.description}
