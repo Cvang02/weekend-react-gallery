@@ -15,6 +15,9 @@ To solve this, my first initial process is to layout a map on how to approach ea
 
 To share pictures, I worked on the GET route first to make sure my dummy data were rendering onto the DOM. After, I worked on the PUT route to update the like button when clicked on it will display total like count. For the image description to appear when clicking on the picture, I used conditional rendering to help remove the image when the text appears and vise-versa. Once, all base mode task were completed, I style it a little for visual before working on stretch goals. Here is a photo of base mode. 
 
+![base1](https://user-images.githubusercontent.com/105823509/190927511-a221b575-8f51-4b84-a643-c5f4ac98ccec.png)
+
+
 Stretch goals are not required to complete but can be useful for practicing purposes. For the stretch goals, I need to move my dummy data into a database using postico. I also created a delete button to delete any data from the client and server side using a delete route. A submit button was also created to let user add any new post/data. Sweet Alert was also incorporated for visual and more css styling were added. Here is the final product of my weekend challenge using react.js that I learned. 
 
 
@@ -23,9 +26,12 @@ To see the fully functional site, please visit: heroku link will be upload soon.
 ## Screen Shot
 
 
+
+
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/)![Uploading base1.png…]()
+
 - react.js
 
 ## Installation
