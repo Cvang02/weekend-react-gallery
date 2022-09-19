@@ -30,7 +30,7 @@ To see the fully functional site, please visit: heroku link will be upload soon.
 - react.js
 - axios
 - body-parser
-- epress
+- express
 - postgresql
 
 
