@@ -29,8 +29,12 @@ To see the fully functional site, please visit: heroku link will be upload soon.
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
-
 - react.js
+- axios
+- body-parser
+- epress
+- postgresql
+
 
 ## Installation
 
