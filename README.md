@@ -22,8 +22,6 @@ Stretch goals are not required to complete but can be useful for practicing purp
 
 ![final1](https://user-images.githubusercontent.com/105823509/190927556-32e73a88-9a90-4b88-b383-a67bc87c2ce5.png)
 
-Stretch goals are not required to complete but can be useful for practicing purposes. For the stretch goals, I need to move my dummy data into a database using postico. I also created a delete button to delete any data from the client and server side using a delete route. A submit button was also created to let user add any new post/data. Sweet Alert was also incorporated for visual and more css styling were added. Here is the final product of my weekend challenge using react.js that I learned. 
-
 To see the fully functional site, please visit: heroku link will be upload soon.
 
 ### Prerequisites
